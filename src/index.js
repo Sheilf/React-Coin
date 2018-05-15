@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './component/common/Header';
+import Header from './component/common/Header.js';
 
 //stateless functional
 const App = () => {
