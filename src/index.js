@@ -7,11 +7,13 @@ const App = () => {
     const title = 'React Coin';
 
     return(
-        <Header />
-
         <div>
-            <h1>{title}</h1>
-            <p>Up-to-date crypto financial data.</p>
+            <Header />
+
+            <div>
+                <h1>{title}</h1>
+                <p>Up-to-date crypto financial data.</p>
+            </div>
         </div>
     );   
 }
