@@ -82,20 +82,20 @@ class List extends React.Component{
 
                 <tbody className="Table-body">
                     {this.state.currencies.map((currency) => (
-<tr key={currency.id}>
-<td>
-<span className="Table-rank">{currency.rank}</span>
-{currency.name}
-</td>
-<td>
-<span className="Table-dollar">$ {currency.price}</span>
-</td>
-<td>
-<span className="Table-dollar">$ {currency.marketCap}</span>
-</td>
-<td>
-{this.renderChangePercent(currency.percentChange24h)}
-</td>
+                        <tr key={currency.id}>
+                            <td>
+                                <span className="Table-rank">{currency.rank}</span>
+                                {currency.name}
+                            </td>
+                            <td>
+                                <span className="Table-dollar">$ {currency.price}</span>
+                            </td>
+                            <td>
+                                <span className="Table-dollar">$ {currency.marketCap}</span>
+                            </td>
+                            <td>
+                                {this.renderChangePercent(currency.percentChange24h)}
+                            </td>
                         </tr>
                     ))}
                 </tbody>
