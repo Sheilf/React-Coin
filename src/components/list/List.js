@@ -1,4 +1,7 @@
 import React from 'react';
+import './Table.css';
+import { handleResponse } from '../../helpers';
+import { API_URL } from '../../config';
 
 
 
@@ -24,15 +27,10 @@ class List extends React.Component{
         });
 
         fetch(
-            'https://api.udilia.com/coins/v1/cryptocurrencies?page=1&perPage=20'
+            //use ` not ' for interpolation..
+            `${API_URL}/cryptocurrencies?page=1&perPage=20`
         ).then(
-            response => {
-                return response.json().then(
-                    json => {
-                        return response.ok ? json : Promise.reject(json);
-                    }
-                );
-            }
+            handleResponse
         ).then(
             (data) => {
                 //console.log('Success', data);
@@ -51,14 +49,58 @@ class List extends React.Component{
             }
         );
     }
+
+    renderChangePercent(percent) {
+        if (percent > 0) {
+          return <span className="percent-raised">{percent}% &uarr;</span>
+        } else if (percent < 0) {
+          return <span className="percent-fallen">{percent}% &darr;</span>
+        } else {
+          return <span>{percent}</span>
+        }
+    }
     render(){
-        console.log(this.state);
+        //console.log(this.state);
+
         if(this.state.loading){
             return <div>Loading...</div>
         }
+        //You need to give a looped item a key in React.
         return(
-        <div>
-            List Component
+        
+        <div className="Table-container">
+
+            <table className="Table">
+                <thead className="Table-head">
+                    <tr>
+                        <th>Cryptocurrency</th>
+                        <th>Price</th>
+                        <th>Market Cap</th>
+                        <th>24H Change</th>
+                    </tr>
+                </thead>
+
+                <tbody className="Table-body">
+                    {this.state.currencies.map((currency) => (
+<tr key={currency.id}>
+<td>
+<span className="Table-rank">{currency.rank}</span>
+{currency.name}
+</td>
+<td>
+<span className="Table-dollar">$ {currency.price}</span>
+</td>
+<td>
+<span className="Table-dollar">$ {currency.marketCap}</span>
+</td>
+<td>
+{this.renderChangePercent(currency.percentChange24h)}
+</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table> 
+
         </div>
         )
     }
