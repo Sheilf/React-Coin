@@ -125,11 +125,11 @@ class List extends React.Component{
                             </td>
 
                             <td>
-                            <span className="Table-dollar">$ {currency.price}</span>
+                            <span className="Table-dollar">$ </span>{currency.price}
                             </td>
                             
                             <td>
-                            <span className="Table-dollar">$ {currency.marketCap}</span>
+                            <span className="Table-dollar">$</span>{currency.marketCap}
                             </td>
                             
                             <td>
