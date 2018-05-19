@@ -1,9 +1,9 @@
 import React from 'react';
-import './Table.css';
+
 import { handleResponse } from '../../helpers';
 import { API_URL } from '../../config';
 import Loading from '../common/Loading';
-
+import Table from './Table';
 
 
 class List extends React.Component{
@@ -69,20 +69,7 @@ class List extends React.Component{
         }
     }
     render(){
-        //console.log(this.state);
-        //its one way of going about this
-        
-        
-        //let loading = state.load
-        //let error = state.error...
 
-        /* ~downside of using const for this.state
-            less verbose but less descriptive
-            
-            this.state data(currencies.data) 
-            vs?
-            AJAX data(currency.data)
-        */
         const {loading, error, currencies} = this.state
 
         if(loading){
@@ -97,51 +84,10 @@ class List extends React.Component{
 
         //You need to give a looped item a key in React.
         return(
-        
-        <div className="Table-container">
-
-            <table className="Table">
-                <thead className="Table-head">
-                    <tr>
-                        <th>Coin</th>
-                        <th>Price</th>
-                        <th>Market Cap</th>
-                        <th>24H Change</th>
-                    </tr>
-                </thead>
-                        {/*
-                            ~Compose sets of <TableBody /> 
-                                creates sets of the previous loop
-                                pagination?
-                                    
-                        */}
-                <tbody className="Table-body">
-                    {currencies.map((currency) => (
-                        <tr key={currency.id}>
-
-                            <td>
-                            <span className="Table-rank">{currency.rank}</span>
-                                {currency.name}
-                            </td>
-
-                            <td>
-                            <span className="Table-dollar">$ </span>{currency.price}
-                            </td>
-                            
-                            <td>
-                            <span className="Table-dollar">$</span>{currency.marketCap}
-                            </td>
-                            
-                            <td>
-                            {this.renderChangePercent(currency.percentChange24h)}
-                            </td>
-
-                        </tr>
-                    ))}
-                </tbody>
-            </table> 
-
-        </div>
+            <Table
+                currencies={currencies}
+                renderChangePercent={this.renderChangePercent}
+             />
         )
     }
 }
