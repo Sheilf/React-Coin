@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { handleResponse } from '../../helpers';
 import { API_URL } from '../../config';
 import Loading from '../common/Loading';
@@ -68,18 +67,7 @@ class List extends React.Component{
             }
         );
     }
-    renderChangePercent(percent) {
-        if (percent > 0) {
-            // &uarr; -> up arrow text symbol
-          return <span className="percent-raised">{percent}% &uarr;</span>
-        } else if (percent < 0) {
-            //&darr; -> down arrow text symbol
-          return <span className="percent-fallen">{percent}% &darr;</span>
-        } else {
-            //..
-          return <span>{percent}</span>
-        }
-    }
+
 
     handlePaginationClick(direction){
         let nextPage = this.state.page;
@@ -114,10 +102,10 @@ class List extends React.Component{
                     totalPages={totalPages}
                     handlePaginationClick={this.handlePaginationClick}
                 />
-                
+
                 <Table
                     currencies={currencies}
-                    renderChangePercent={this.renderChangePercent}
+              
                 />
 
 
