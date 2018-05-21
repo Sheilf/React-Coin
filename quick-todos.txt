@@ -1,3 +1,0 @@
-5/20
--Push Detail Component
--Add a different transition (not a loading spinner)
