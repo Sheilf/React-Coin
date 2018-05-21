@@ -1,9 +1,0 @@
--Reusable components
--file structuring
--reusable methods
--React Router
--Pagination
--Search and autocompletion
--Destructuring
--AJAX & API data pulling
--Lifecycles
