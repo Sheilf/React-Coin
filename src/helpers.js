@@ -1,5 +1,12 @@
 import React from 'react';
 
+/*
+This is similar to fragments in Android. Mini UIs/Components that occupy a main activity
+These are the shared methods that get passed down and called in similar operations.
+
+
+*/
+
 export const handleResponse = (response) => {
     /*
         Fetch error helper.
@@ -12,6 +19,8 @@ export const handleResponse = (response) => {
     );
 }
 
+
+//display a symbol
 export const renderChangePercent = (percent) => {
     if (percent > 0) {
         // &uarr; -> up arrow text symbol
