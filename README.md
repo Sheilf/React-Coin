@@ -1,1 +1,1 @@
-# Write readME after project is completed
+# Final version written in React-Coin repository
