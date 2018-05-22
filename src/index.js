@@ -7,7 +7,7 @@ import NotFound from './components/notfound/NotFound';
 import Detail from './components/detail/Detail';
 import './index.css';
 
-//stateless functional
+//Route the components and links
 const App = () => {
    
 
