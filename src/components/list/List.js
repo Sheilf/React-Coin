@@ -7,12 +7,7 @@ import Pagination from './Pagination';
 
 
 class List extends React.Component{
-    /*
-    State::
-        Bool loading -> if data is being presented or processed
-        currencies[] -> array populated after api data is fetched
-        Obj error -> error flag for fetching
-    */
+
     constructor(){
         super();
         this.state = {
@@ -38,7 +33,7 @@ class List extends React.Component{
 
         fetch(
             //use ` not ' for interpolation..
-            `${API_URL}/cryptocurrencies?page=${page}&perPage=20`
+            `${API_URL}/cryptocurrencies?page=${page}&perPage=15`
         ).then(
             handleResponse
         ).then(
