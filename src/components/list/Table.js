@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 const Table = (props) => {
 
-    const {currencies, history } = props;
+    const { currencies, history } = props;
 
     return(
         
@@ -21,12 +21,7 @@ const Table = (props) => {
                         <th>24H Change</th>
                     </tr>
                 </thead>
-                        {/*
-                            ~Compose sets of <TableBody /> 
-                                creates sets of the previous loop
-                                pagination?
-                                    
-                        */}
+
                 <tbody className="Table-body">
                     {currencies.map((currency) => (
                         <tr key={currency.id}
