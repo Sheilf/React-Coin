@@ -3,7 +3,7 @@ import './Pagination.css';
 import PropTypes from 'prop-types';
 
 const Pagination = (props) =>{
-    //leftArrow and &rightArrow}
+    //leftArrow and &rightArrow
     const { page, totalPages, handlePaginationClick } = props;
     return(
         <div id="Pagination">
@@ -35,6 +35,6 @@ const Pagination = (props) =>{
 Pagination.PropTypes = {
     page: PropTypes.number.isRequired,
     totalPages: PropTypes.number.isRequired,
-    handlePaginationClick: PropTypes.func.isRequired,
+    handlePaginationClick: PropTypes.func.isRequired
 }
 export default Pagination;
