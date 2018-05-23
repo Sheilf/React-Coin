@@ -14,7 +14,22 @@ class Detail extends React.Component {
         }
     }
     componentDidMount(){
+        console.log("Component mounted, ", this.props);
         const currencyId = this.props.match.params.id;
+        this.fetchCurrency(currencyId)
+
+    }
+
+    componentWillReceiveProps(nextProps){
+        console.log("Component updated ", nextProps);
+        if(this.props.location.pathname !== nextProps.location.pathname){
+            //get new id from url
+            const newCurrencyId = nextProps.match.params.id;
+            this.fetchCurrency(newCurrencyId)
+        }
+    }
+
+    fetchCurrency(currencyId){
         this.setState({
             loading: true
         })
@@ -46,12 +61,12 @@ class Detail extends React.Component {
         
         //render Loading || Error component 
          if(loading){
-            <div className = "loading-container"><Loading /></div>
+            return <div className = "loading-container"><Loading /></div>
            
         }
         
         if(error){
-            <div className = "error">{error}</div>
+            return <div className = "error">{error}</div>
         }
 
         //render otherwise
@@ -62,11 +77,12 @@ class Detail extends React.Component {
                 </h1>
                 <div className = "Detail-container">
                     <div className = "Detail-item">
+                        Rank <span className="Detail-value">{currency.rank}</span>
+                    </div>    
+                    <div className = "Detail-item">
                         Price <span className="Detail-value">${currency.price}</span>
                     </div>
-                    <div className = "Detail-item">
-                        Rank <span className="Detail-value">{currency.rank}</span>
-                    </div>               
+           
                     <div className = "Detail-item">
                         24H Change <span className="Detail-value">{renderChangePercent(currency.percentChange24h)}</span>
                     </div>
