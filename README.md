@@ -10,7 +10,7 @@ run npm install & npm run in react-coin directory
 # Components
 "***" Denotes stateless functional component
 
-1. <App />***
+1. ***<App />
 ~Renders root
   Routes Header, Detail, List, and NotFound components
 
