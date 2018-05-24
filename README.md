@@ -38,7 +38,7 @@ run npm install & npm run in react-coin directory
 ~Search component in Header that manages search through currency list & autocompletion.
   Manages state for input typed & search results using AJAX fetching
   
-9. <Header />
+9. <Header />***
 ~Header component shared across web app to link back to home and display an icon/logo and search feature
 # React & ES6 patterns used
 
