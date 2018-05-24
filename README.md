@@ -1,4 +1,4 @@
-
+<pre>
 # React Coin
 A website similar to https://coinmarketcap.com/ that keeps a list of cryptocurrencies in their market and their daily changes.
 
@@ -63,3 +63,4 @@ run npm install & npm run in react-coin directory
 
 7. DefaultProps
 ~ React way of managing default props when a component is receiving various parameters
+</pre>
