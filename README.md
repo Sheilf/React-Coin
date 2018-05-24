@@ -10,36 +10,37 @@ run npm install & npm run in react-coin directory
 # Components
 "***" Denotes stateless functional component
 
-1. ***<App />
+1. App/Index.js ***
 ~Renders root
   Routes Header, Detail, List, and NotFound components
 
-2. <NotFound />***
+2. NotFound.js ***
 ~Renders page error
 
-3. <List />
+3. List.js 
 ~Renders Loading, Pagination, and Table components
   Establishes state for loading, pages, and AJAX data (array of currencies)
 
-4. <Loading />***
+4. Loading.js ***
 ~Renders and animated loading symbol when data is pulled or searched for from API
 
-5. <Pagination />***
+5. Pagination.js ***
 ~Renders button functionality to change list of currencies.
 
-6. <Table />***
+6. Table.js ***
 ~Renders a table and maps a set of rows, data cells and its respective route ID.
 
-7. <Detail />
+7. Detail
 ~Renders data about a selected currency on a new page. 
   Maps currencyID to its route location. Manages state of what currency the application is on.
  
-8. <Search />
+8. Search
 ~Search component in Header that manages search through currency list & autocompletion.
   Manages state for input typed & search results using AJAX fetching
   
-9. <Header />***
+9. Header.js ***
 ~Header component shared across web app to link back to home and display an icon/logo and search feature
+
 # React & ES6 patterns used
 
 1. React-router
